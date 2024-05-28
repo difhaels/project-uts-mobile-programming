@@ -17,7 +17,7 @@ class MyBiodata extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp( 
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
@@ -39,27 +39,61 @@ class MyBiodata extends StatelessWidget {
                   children: [
                     Text(
                       'Nama :  $nama',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'NPM : $npm',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'No HP :  $noHp',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'Alamat : $alamat',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'IPK : $ipk',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       'Hobi : ${hobi.join(', ')}',
-                      style: TextStyle(fontSize: 16),
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 20.0),
+                      child: Text(
+                        'Kalimat Motivasi:',
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Text(
+                      kalimatMotivasi,
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 20.0),
+                      child: 
+                      Text(
+                        'Riwayat Pendidikan:',
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Table(
+                      border: TableBorder.all(color: Colors.black),
+                      children: const [
+                        TableRow(children: [
+                          Text('Cell 1'),
+                          Text('Cell 2'),
+                          Text('Cell 3'),
+                        ]),
+                        TableRow(children: [
+                          Text('Cell 4'),
+                          Text('Cell 5'),
+                          Text('Cell 6'),
+                        ])
+                      ],
                     ),
                   ],
                 ),
