@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyBiodata());
+  runApp(const MyBiodata()); // tambahin const buat nambah performa
 }
 
 class MyBiodata extends StatelessWidget {
+  const MyBiodata({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,6 +15,7 @@ class MyBiodata extends StatelessWidget {
   }
 }
 
+// ignore: use_key_in_widget_constructors
 class BiodataScreen extends StatelessWidget {
   final String nama = 'Agung Saputra';
   final String npm = '123456789';
@@ -55,7 +57,7 @@ class BiodataScreen extends StatelessWidget {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Foto Saya'),
+        title: const Text('Foto Saya'), // const = performa
         content: SingleChildScrollView(
           child: Column(
             children: <Widget>[
@@ -75,7 +77,7 @@ class BiodataScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10), // Jarak antara baris atas dan bawah
+              const SizedBox(height: 10), // Jarak antara baris atas dan bawah // const = performa
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -84,7 +86,7 @@ class BiodataScreen extends StatelessWidget {
                     width: 150,
                     height: 150,
                   ),
-                  SizedBox(width: 10), // Jarak antara gambar kiri dan kanan
+                  const SizedBox(width: 10), // Jarak antara gambar kiri dan kanan // const = performa
                   Image.asset(
                     'assets/images/foto.jpg',
                     width: 150,
@@ -97,7 +99,7 @@ class BiodataScreen extends StatelessWidget {
         ),
         actions: <Widget>[
           TextButton(
-            child: Text('Tutup'),
+            child: const Text('Tutup'), // const = performa
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -113,8 +115,8 @@ class BiodataScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Tentang Saya'),
-          content: SingleChildScrollView(
+          title: const Text('Tentang Saya'),
+          content: const SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
                 Text('Nama saya Agung Saputra, seorang Pengembang Aplikasi dan Mahasiswa. Cita-cita saya adalah menjadi Fullstack Developer, UI/UX designer, bahkan System Analyst yang semuanya dapat membantu saya dalam mengembangkan aplikasi. Nah itu saja, Saya harap kita bisa bekerja sama.'),
@@ -123,7 +125,7 @@ class BiodataScreen extends StatelessWidget {
           ),
           actions: <Widget>[
             TextButton(
-              child: Text('Tutup'),
+              child: const Text('Tutup'),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -386,25 +388,25 @@ class BiodataScreen extends StatelessWidget {
                             cells: [
                               DataCell(
                                 Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                                  padding: const EdgeInsets.symmetric(vertical: 2.0),
                                   child: Text(school['No']!),
                                 ),
                               ),
                               DataCell(
                                 Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                                  padding: const EdgeInsets.symmetric(vertical: 2.0),
                                   child: Text(school['Sekolah']!),
                                 ),
                               ),
                               DataCell(
                                 Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                                  padding: const EdgeInsets.symmetric(vertical: 2.0),
                                   child: Text(school['Tahun Masuk']!),
                                 ),
                               ),
                               DataCell(
                                 Padding(
-                                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                                  padding: const EdgeInsets.symmetric(vertical: 2.0),
                                   child: Text(school['Tahun Lulus']!),
                                 ),
                               ),
@@ -428,19 +430,19 @@ class BiodataScreen extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     ElevatedButton(
                       onPressed: () {
                         showFoto(context);
                       },
-                      child: Text('Lihat Foto'),
+                      child: const Text('Lihat Foto'),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     ElevatedButton(
                       onPressed: () {
                         showTentangSaya(context);
                       },
-                      child: Text('Tentang Saya'),
+                      child: const Text('Tentang Saya'),
                     ),
                   ],
                 ),
