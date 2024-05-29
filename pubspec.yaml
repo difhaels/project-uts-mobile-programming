@@ -91,3 +91,6 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/images/foto.jpg
+    - assets/images/foto1.jpg
+    - assets/images/foto2.jpg
+    - assets/images/foto3.jpg

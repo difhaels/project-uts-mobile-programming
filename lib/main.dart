@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyBiodata()); // tambahin const buat nambah performa
+  runApp(const MyBiodata());
 }
 
 class MyBiodata extends StatelessWidget {
   const MyBiodata({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,15 +18,15 @@ class MyBiodata extends StatelessWidget {
 
 // ignore: use_key_in_widget_constructors
 class BiodataScreen extends StatelessWidget {
-  final String nama = 'Agung Saputra';
-  final String npm = '123456789';
-  final String noHp = '0895337305533';
-  final String alamat = 'Jl. Cemara No 02 RT 03 RW 01 Cileungsi';
-  final double ipk = 4.01;
-  final List<String> hobi = ['Main game', 'Menonton animasi'];
-  final String email = 'agungsaputra@gmail.com';
-  final String kalimatMotivasi = 'Skill hanya batu loncatan untuk kemenangan, kemenangan adalah ketika kita dibayar'; 
-  final List<Map<String, String>> schoolHistory = [
+  final String namaAgung = 'Agung Saputra';
+  final String npmAgung = '123456789';
+  final String noHpAgung = '0895337305533';
+  final String alamatAgung = 'Jl. Cemara No 02 RT 03 RW 01 Cileungsi';
+  final double ipkAgung = 4.01;
+  final List<String> hobiAgung = ['Main game', 'Menonton animasi'];
+  final String emailAgung = 'agungsaputra@gmail.com';
+  final String kalimatMotivasiAgung = 'Skill hanya batu loncatan untuk kemenangan, kemenangan adalah ketika kita dibayar';
+  final List<Map<String, String>> sekolahAgung = [
     {
       'No': '1',
       'Sekolah': 'SDN 08 Cileungsi',
@@ -53,62 +54,62 @@ class BiodataScreen extends StatelessWidget {
   ];
 
   void showFoto(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: const Text('Foto Saya'), // const = performa
-        content: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Image.asset(
-                    'assets/images/foto.jpg',
-                    width: 150,
-                    height: 150,
-                  ),
-                  const SizedBox(width: 10), // Jarak antara gambar kiri dan kanan
-                  Image.asset(
-                    'assets/images/foto.jpg',
-                    width: 150,
-                    height: 150,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10), // Jarak antara baris atas dan bawah // const = performa
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Image.asset(
-                    'assets/images/foto.jpg',
-                    width: 150,
-                    height: 150,
-                  ),
-                  const SizedBox(width: 10), // Jarak antara gambar kiri dan kanan // const = performa
-                  Image.asset(
-                    'assets/images/foto.jpg',
-                    width: 150,
-                    height: 150,
-                  ),
-                ],
-              ),
-            ],
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Foto Saya'),
+          content: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/foto.jpg',
+                      width: 150,
+                      height: 150,
+                    ),
+                    const SizedBox(width: 10),
+                    Image.asset(
+                      'assets/images/foto1.jpg',
+                      width: 150,
+                      height: 150,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/foto2.jpg',
+                      width: 150,
+                      height: 150,
+                    ),
+                    const SizedBox(width: 10),
+                    Image.asset(
+                      'assets/images/foto3.jpg',
+                      width: 150,
+                      height: 150,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-        ),
-        actions: <Widget>[
-          TextButton(
-            child: const Text('Tutup'), // const = performa
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      );
-    },
-  );
-}
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Tutup'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   void showTentangSaya(BuildContext context) {
     showDialog(
@@ -147,183 +148,477 @@ class BiodataScreen extends StatelessWidget {
           fontSize: 24,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxWidth > 1000) {
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SingleChildScrollView(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      const Icon(
+                                        Icons.face,
+                                        color: Colors.black,
+                                        size: 30.0,
+                                      ),
+                                      const SizedBox(width: 10),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          const Text(
+                                            'Nama',
+                                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                          ),
+                                          Text(
+                                            namaAgung,
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      const Icon(
+                                        Icons.play_arrow_rounded,
+                                        color: Colors.black,
+                                        size: 30.0,
+                                      ),
+                                      const SizedBox(width: 10),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          const Text(
+                                            'IPK',
+                                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                          ),
+                                          Text(
+                                            '$ipkAgung',
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      const Icon(
+                                        Icons.games,
+                                        color: Colors.black,
+                                        size: 30.0,
+                                      ),
+                                      const SizedBox(width: 10),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          const Text(
+                                            'Hobi',
+                                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                          ),
+                                          Text(
+                                            hobiAgung.join(', '),
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 30.0),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      const Icon(
+                                        Icons.phone_android,
+                                        color: Colors.black,
+                                        size: 30.0,
+                                      ),
+                                      const SizedBox(width: 10),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          const Text(
+                                            'No HP',
+                                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                          ),
+                                          Text(
+                                            noHpAgung,
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      const Icon(
+                                        Icons.email,
+                                        color: Colors.black,
+                                        size: 30.0,
+                                      ),
+                                      const SizedBox(width: 10),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          const Text(
+                                            'Email',
+                                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                          ),
+                                          Text(
+                                            emailAgung,
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      const Icon(
+                                        Icons.polyline_outlined,
+                                        color: Colors.black,
+                                        size: 30.0,
+                                      ),
+                                      const SizedBox(width: 10),
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          const Text(
+                                            'Alamat',
+                                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                          ),
+                                          Text(
+                                            alamatAgung,
+                                            style: const TextStyle(fontSize: 16),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 20.0),
+                            child: Text(
+                              'Kalimat Motivasi:',
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Text(
+                            kalimatMotivasiAgung,
+                            style: const TextStyle(fontSize: 16),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 20.0),
+                            child: Text(
+                              'Riwayat Pendidikan:',
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          DataTable(
+                            columns: const <DataColumn>[
+                              DataColumn(
+                                label: Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                                  child: Text(
+                                    'No',
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                                  child: Text(
+                                    'Sekolah',
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                                  child: Text(
+                                    'Tahun Masuk',
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                ),
+                              ),
+                              DataColumn(
+                                label: Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 2.0),
+                                  child: Text(
+                                    'Tahun Lulus',
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                ),
+                              ),
+                            ],
+                            rows: sekolahAgung
+                                .map(
+                                  (school) => DataRow(
+                                    cells: [
+                                      DataCell(
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(vertical: 2.0),
+                                          child: Text(school['No']!),
+                                        ),
+                                      ),
+                                      DataCell(
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(vertical: 2.0),
+                                          child: Text(school['Sekolah']!),
+                                        ),
+                                      ),
+                                      DataCell(
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(vertical: 2.0),
+                                          child: Text(school['Tahun Masuk']!),
+                                        ),
+                                      ),
+                                      DataCell(
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(vertical: 2.0),
+                                          child: Text(school['Tahun Lulus']!),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                                .toList(),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ClipOval(
+                            child: Image.asset(
+                              'assets/images/foto.jpg',
+                              width: 150,
+                              height: 150,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          ElevatedButton(
+                            onPressed: () {
+                              showFoto(context);
+                            },
+                            child: const Text('Lihat Foto'),
+                          ),
+                          const SizedBox(height: 10),
+                          ElevatedButton(
+                            onPressed: () {
+                              showTentangSaya(context);
+                            },
+                            child: const Text('Tentang Saya'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          } else {
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
+                            const Icon(
+                              Icons.face,
+                              color: Colors.black,
+                              size: 30.0,
+                            ),
+                            const SizedBox(width: 10),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    const Icon(
-                                      Icons.face,
-                                      color: Colors.black,
-                                      size: 30.0,
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        const Text(
-                                          'Nama',
-                                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                          nama,
-                                          style: const TextStyle(fontSize: 16),
-                                        ),
-                                      ],
-                                    )
-                                  ],
+                                const Text(
+                                  'Nama',
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                                 ),
-                                const SizedBox(height: 10),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    const Icon(
-                                      Icons.play_arrow_rounded,
-                                      color: Colors.black,
-                                      size: 30.0,
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        const Text(
-                                          'IPK',
-                                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                          '$ipk',
-                                          style: const TextStyle(fontSize: 16),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                                const SizedBox(height: 10),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    const Icon(
-                                      Icons.games,
-                                      color: Colors.black,
-                                      size: 30.0,
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        const Text(
-                                          'Hobi',
-                                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                      hobi.join(', '),
-                                      style: const TextStyle(fontSize: 16),
-                                    ),
-                                      ],
-                                    )
-                                  ],
+                                Text(
+                                  namaAgung,
+                                  style: const TextStyle(fontSize: 16),
                                 ),
                               ],
-                            )
-                            ,
-                            const SizedBox(width: 30.0,), 
-                            // sebelah kanan nohp, email, alamat
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    const Icon(
-                                      Icons.phone_android,
-                                      color: Colors.black,
-                                      size: 30.0,
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        const Text(
-                                          'No HP',
-                                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                          noHp,
-                                          style: const TextStyle(fontSize: 16),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                                const SizedBox(height: 10),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    const Icon(
-                                      Icons.email,
-                                      color: Colors.black,
-                                      size: 30.0,
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        const Text(
-                                          'Email',
-                                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                          email,
-                                          style: const TextStyle(fontSize: 16),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                                const SizedBox(height: 10),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    const Icon(
-                                      Icons.polyline_outlined,
-                                      color: Colors.black,
-                                      size: 30.0,
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        const Text(
-                                          'Alamat',
-                                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                        ),
-                                        Text(
-                                          alamat,
-                                          style: const TextStyle(fontSize: 16),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ],
-                            )
-                          
-                          ]
+                            ),
+                          ],
                         ),
+                        const SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.play_arrow_rounded,
+                              color: Colors.black,
+                              size: 30.0,
+                            ),
+                            const SizedBox(width: 10),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'IPK',
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  '$ipkAgung',
+                                  style: const TextStyle(fontSize: 16),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.games,
+                              color: Colors.black,
+                              size: 30.0,
+                            ),
+                            const SizedBox(width: 10),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Hobi',
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  hobiAgung.join(', '),
+                                  style: const TextStyle(fontSize: 16),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20.0),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.phone_android,
+                              color: Colors.black,
+                              size: 30.0,
+                            ),
+                            const SizedBox(width: 10),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'No HP',
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  noHpAgung,
+                                  style: const TextStyle(fontSize: 16),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.email,
+                              color: Colors.black,
+                              size: 30.0,
+                            ),
+                            const SizedBox(width: 10),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Email',
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  emailAgung,
+                                  style: const TextStyle(fontSize: 16),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.polyline_outlined,
+                              color: Colors.black,
+                              size: 30.0,
+                            ),
+                            const SizedBox(width: 10),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Alamat',
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  alamatAgung,
+                                  style: const TextStyle(fontSize: 16),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                     const Padding(
                       padding: EdgeInsets.only(top: 20.0),
                       child: Text(
@@ -332,13 +627,12 @@ class BiodataScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      kalimatMotivasi,
+                      kalimatMotivasiAgung,
                       style: const TextStyle(fontSize: 16),
                     ),
                     const Padding(
                       padding: EdgeInsets.only(top: 20.0),
-                      child: 
-                      Text(
+                      child: Text(
                         'Riwayat Pendidikan:',
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
@@ -382,74 +676,74 @@ class BiodataScreen extends StatelessWidget {
                           ),
                         ),
                       ],
-                      rows: schoolHistory
-                        .map(
-                          (school) => DataRow(
-                            cells: [
-                              DataCell(
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 2.0),
-                                  child: Text(school['No']!),
+                      rows: sekolahAgung
+                          .map(
+                            (school) => DataRow(
+                              cells: [
+                                DataCell(
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 2.0),
+                                    child: Text(school['No']!),
+                                  ),
                                 ),
-                              ),
-                              DataCell(
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 2.0),
-                                  child: Text(school['Sekolah']!),
+                                DataCell(
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 2.0),
+                                    child: Text(school['Sekolah']!),
+                                  ),
                                 ),
-                              ),
-                              DataCell(
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 2.0),
-                                  child: Text(school['Tahun Masuk']!),
+                                DataCell(
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 2.0),
+                                    child: Text(school['Tahun Masuk']!),
+                                  ),
                                 ),
-                              ),
-                              DataCell(
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 2.0),
-                                  child: Text(school['Tahun Lulus']!),
+                                DataCell(
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 2.0),
+                                    child: Text(school['Tahun Lulus']!),
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        )
-                      .toList(),
+                              ],
+                            ),
+                          )
+                          .toList(),
                     ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                      ClipOval(
-                      child: Image.asset(
-                        'assets/images/foto.jpg',
-                        width: 150,
-                        height: 150,
-                        fit: BoxFit.cover,
+                    const SizedBox(height: 20.0),
+                    Center(
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/images/foto.jpg',
+                          width: 150,
+                          height: 150,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     const SizedBox(height: 10),
-                    ElevatedButton(
-                      onPressed: () {
-                        showFoto(context);
-                      },
-                      child: const Text('Lihat Foto'),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          showFoto(context);
+                        },
+                        child: const Text('Lihat Foto'),
+                      ),
                     ),
                     const SizedBox(height: 10),
-                    ElevatedButton(
-                      onPressed: () {
-                        showTentangSaya(context);
-                      },
-                      child: const Text('Tentang Saya'),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          showTentangSaya(context);
+                        },
+                        child: const Text('Tentang Saya'),
+                      ),
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
+            );
+          }
+        },
       ),
     );
   }
