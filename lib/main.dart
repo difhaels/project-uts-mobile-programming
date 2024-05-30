@@ -460,6 +460,35 @@ class BiodataScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Center(
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/images/foto.jpg',
+                          width: 150,
+                          height: 150,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          showFoto(context);
+                        },
+                        child: const Text('Lihat Foto'),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          showTentangSaya(context);
+                        },
+                        child: const Text('Tentang Saya'),
+                      ),
+                    ),
+                    const SizedBox(height: 30),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -657,15 +686,7 @@ class BiodataScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        DataColumn(
-                          label: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 2.0),
-                            child: Text(
-                              'Tahun Masuk',
-                              style: TextStyle(fontSize: 16),
-                            ),
-                          ),
-                        ),
+                        
                         DataColumn(
                           label: Padding(
                             padding: EdgeInsets.symmetric(vertical: 2.0),
@@ -695,12 +716,6 @@ class BiodataScreen extends StatelessWidget {
                                 DataCell(
                                   Padding(
                                     padding: const EdgeInsets.symmetric(vertical: 2.0),
-                                    child: Text(school['Tahun Masuk']!),
-                                  ),
-                                ),
-                                DataCell(
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: 2.0),
                                     child: Text(school['Tahun Lulus']!),
                                   ),
                                 ),
@@ -708,35 +723,6 @@ class BiodataScreen extends StatelessWidget {
                             ),
                           )
                           .toList(),
-                    ),
-                    const SizedBox(height: 20.0),
-                    Center(
-                      child: ClipOval(
-                        child: Image.asset(
-                          'assets/images/foto.jpg',
-                          width: 150,
-                          height: 150,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Center(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          showFoto(context);
-                        },
-                        child: const Text('Lihat Foto'),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Center(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          showTentangSaya(context);
-                        },
-                        child: const Text('Tentang Saya'),
-                      ),
                     ),
                   ],
                 ),
